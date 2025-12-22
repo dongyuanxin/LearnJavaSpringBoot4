@@ -1,6 +1,6 @@
 package com.imooc.luckmoney.controller;
 
-import com.imooc.luckmoney.domain.LuckMoneyDO;
+import com.imooc.luckmoney.domain.LuckMoney;
 import com.imooc.luckmoney.repository.LuckMoneyRepository;
 import com.imooc.luckmoney.service.LuckMoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +21,31 @@ public class LuckyMoneyController {
     private LuckMoneyService service;
 
     @GetMapping("/list")
-    public List<LuckMoneyDO> list() {
+    public List<LuckMoney> list() {
         return this.respository.findAll();
     }
 
     @GetMapping("/find/{id}")
-    public LuckMoneyDO findById(@PathVariable("id") Integer id) {
+    public LuckMoney findById(@PathVariable("id") Integer id) {
         return this.respository.findById(id).orElse(null);
     }
 
     @PostMapping("/add")
-    public LuckMoneyDO add(@RequestParam("producer") String producer,
-                           @RequestParam("money") BigDecimal money
+    public LuckMoney add(@RequestParam("producer") String producer,
+                         @RequestParam("money") BigDecimal money
                          ) {
-        LuckMoneyDO luckMoneyDO = new LuckMoneyDO();
-        luckMoneyDO.setProducer(producer);
-        luckMoneyDO.setMoney(money);
-        return this.respository.save(luckMoneyDO);
+        LuckMoney luckMoney = new LuckMoney();
+        luckMoney.setProducer(producer);
+        luckMoney.setMoney(money);
+        return this.respository.save(luckMoney);
     }
 
     @PutMapping("/update/{id}")
-    public LuckMoneyDO update(@PathVariable("id") Integer id,
-                              @RequestParam("consumer") String consumer) {
-        Optional<LuckMoneyDO> optional = this.respository.findById(id);
+    public LuckMoney update(@PathVariable("id") Integer id,
+                            @RequestParam("consumer") String consumer) {
+        Optional<LuckMoney> optional = this.respository.findById(id);
         if (optional.isPresent()) {
-            LuckMoneyDO ins = optional.get();
+            LuckMoney ins = optional.get();
             ins.setConsumer(consumer);
             return this.respository.save(ins);
         }

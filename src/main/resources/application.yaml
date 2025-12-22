@@ -21,3 +21,7 @@ limit:
   minMoney: 0.01
   maxMoney: 9999
   description: 最少要发${limit.minMoney}元, 最多${limit.maxMoney}元
+
+girl:
+  cupSize: B
+  age: 18

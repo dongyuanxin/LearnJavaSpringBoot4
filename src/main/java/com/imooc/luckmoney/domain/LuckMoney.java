@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Entity
 @Table(name = "luck_money")
-public class LuckMoneyDO {
+public class LuckMoney {
     @Id
     @GeneratedValue
     private Integer id;
