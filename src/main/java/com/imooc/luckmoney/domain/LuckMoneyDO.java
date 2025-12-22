@@ -1,4 +1,4 @@
-package com.imooc.luckmoney;
+package com.imooc.luckmoney.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

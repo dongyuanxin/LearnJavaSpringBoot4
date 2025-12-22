@@ -1,4 +1,4 @@
-package com.imooc.luckmoney;
+package com.imooc.luckmoney.propterties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

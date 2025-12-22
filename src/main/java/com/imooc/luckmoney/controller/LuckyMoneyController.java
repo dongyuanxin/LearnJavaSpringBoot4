@@ -1,5 +1,8 @@
-package com.imooc.luckmoney;
+package com.imooc.luckmoney.controller;
 
+import com.imooc.luckmoney.domain.LuckMoneyDO;
+import com.imooc.luckmoney.repository.LuckMoneyRepository;
+import com.imooc.luckmoney.service.LuckMoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

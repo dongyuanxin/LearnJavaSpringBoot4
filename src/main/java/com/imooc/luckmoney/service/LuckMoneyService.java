@@ -1,5 +1,7 @@
-package com.imooc.luckmoney;
+package com.imooc.luckmoney.service;
 
+import com.imooc.luckmoney.domain.LuckMoneyDO;
+import com.imooc.luckmoney.repository.LuckMoneyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
