@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/girl")
@@ -40,6 +42,13 @@ public class GirlController {
         girl.setAge(girl.getAge());
 
         return ResultFormat.success(girlRepository.save(girl));
+    }
+
+    @GetMapping(value = "/girls")
+    public List<Girl> girlList() {
+        log.info("girlList");
+
+        return girlRepository.findAll();
     }
 
     @GetMapping("/getAge/{age}")

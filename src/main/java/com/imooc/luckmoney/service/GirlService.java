@@ -1,11 +1,14 @@
 package com.imooc.luckmoney.service;
 
+import com.imooc.luckmoney.domain.Girl;
 import com.imooc.luckmoney.domain.ResultStatus;
 import com.imooc.luckmoney.exception.HttpApiBaseException;
 import com.imooc.luckmoney.repository.GirlRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -17,5 +20,9 @@ public class GirlService {
         if (age < 22) {
             throw new HttpApiBaseException(ResultStatus.USER_UNVALID);
         }
+    }
+
+    public Girl findOne(Integer id) {
+        return this.repository.findById(id).orElse(null);
     }
 }
